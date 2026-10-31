@@ -1,0 +1,49 @@
+{
+    "name": "filippo-toso/wireguard-http",
+    "description": "Laravel-style HTTP client that sends requests through a WireGuard tunnel.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Filippo Toso",
+            "email": "filippo.toso@creativepark.it"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "path",
+            "url": "../wireguard-transport",
+            "options": {
+                "symlink": true
+            }
+        }
+    ],
+    "require": {
+        "php": ">=8.2",
+        "ext-openssl": "*",
+        "ext-sodium": "*",
+        "filippo-toso/wireguard-transport": "^1.0",
+        "guzzlehttp/psr7": "^2.6"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^11.5",
+        "phpstan/phpstan": "^2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "FilippoToso\\WireguardHttp\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "FilippoToso\\WireguardHttp\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "phpunit",
+        "analyse": "phpstan analyse --memory-limit=512M"
+    },
+    "config": {
+        "sort-packages": true
+    }
+}
